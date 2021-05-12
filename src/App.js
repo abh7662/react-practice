@@ -1,32 +1,24 @@
+/*
+Time to have fun styling! But first things first: 
+
+1. Change the input/p combo below to be a new component called <TodoItem />. <TodoItem /> (for now) will just have the same displayed data below (every todo item is the same) hardcoded inside of it. (We'll learn soon how to make the TodoItem more flexible)
+    
+2. Style up the page however you want! You're welcome to use regular CSS (in the CSS file) or inline styles, or both!
+*/
+
 import React from "react"
+import TodoItem from "./TodoItem"
 import "./App.css"
-const App = () => {
-    const currentTime = new Date("02-02-2020 13:40:20")
-    let timeOfDay, mycolor
 
-    if(currentTime.getHours() < 12){
-        timeOfDay = "Good Morning"
-        mycolor = "green"
-    }else if(currentTime.getHours() > 12 && currentTime.getHours() < 17){
-        timeOfDay = "Good AfterNoon"
-        mycolor = "red"
-
-    }else{
-        timeOfDay = "Good Night"
-        mycolor = "blue"
-
-    }
-
-    return(
-        <div>
-            {/* <h1>{currentTime.getHours()}</h1> */}
-            {/* <h1>{currentTime.getDate()}</h1>
-            <h1>{currentTime.getMinutes()}</h1>
-            <h1>{currentTime.getDay()}</h1>
-            <h1>{currentTime.getMonth()}</h1> */}
-            <h1 style={{color: mycolor}}>{timeOfDay}</h1>
+function App() {
+    return (
+        <div className="Todo-Items">
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
         </div>
     )
 }
- 
+
 export default App

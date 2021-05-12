@@ -1,0 +1,12 @@
+.Todo-Items{
+    display: flex;
+    flex-direction: column;
+}
+
+.Todo-Items input[type="checkbox"]{
+    margin: 0;
+}
+.Todo-Items p{
+    margin: 0;
+}
+

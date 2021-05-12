@@ -5,29 +5,11 @@
 body{
     height: 100vh;
 }
-header{
-    position:sticky;
-    top: 0;
-    width: 100%;
-    font-size: 3em;
-    color: white;
-    padding: .6em;
-    background-color: aqua;
-    text-align: center;
-}
-
-footer{
-    bottom: 0;
-    width: 100%;
-    position:sticky;
-    font-size: 3em;
-    color: white;
-    padding: .6em;
-    background-color: aqua;
-    text-align: center;
-
-}
-
-main{
-    /* height: 80vh; */
+.Todo-Items{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
 }
