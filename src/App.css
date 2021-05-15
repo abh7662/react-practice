@@ -6,10 +6,8 @@ body{
     height: 100vh;
 }
 .Todo-Items{
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(196, 193, 193);
+
     width: fit-content;
     margin: 0 auto;
 }
