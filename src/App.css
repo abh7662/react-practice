@@ -7,7 +7,7 @@ body{
 }
 .Todo-Items{
     background-color: rgb(196, 193, 193);
-
-    width: fit-content;
+    height: 50vh;
+    width: 300px;
     margin: 0 auto;
 }
