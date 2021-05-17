@@ -1,0 +1,13 @@
+body{
+    background-color: blueviolet
+}
+.product{
+    padding: 1.5em;
+    border-radius: 10em;
+    width: 50%;
+    margin: 1em auto;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+
