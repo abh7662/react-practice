@@ -15,28 +15,13 @@
 import React from "react"
 import Joke from "./Joke"
 import "./App.css"
+import jokesData from "./JokesData"
 function App(){
+    console.log(jokesData)
+    const JokeComponent = jokesData.map(joke => <Joke key={joke.id} question={joke.question} punchLine={joke.punchLine} />)
     return(
     <div>
-        <Joke 
-            question="what is ramayana"
-            answer="It's a holy book"
-        />
-        <Joke 
-            question="what is ramayana"
-        />
-        <Joke 
-            question="what is ramayana"
-
-            answer="It's a holy book"
-        />
-        <Joke 
-            answer="It's a holy book"
-        />
-        <Joke 
-            question="what is ramayana"
-            answer="It's a holy book"
-        />
+        {JokeComponent}
         
     </div>
         
