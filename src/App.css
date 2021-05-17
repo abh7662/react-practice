@@ -1,13 +1,17 @@
-*{
-    box-sizing: border-box;
+body{
+    background-color: blueviolet
+}
+h1{
+    padding: 1.5em;
+    border-radius: 10px;
+    width: 80%;
+    margin: 1em auto;
+}
+h1:nth-child(even){
+    background-color: rgba(255,255,255,.1);
+    color: whitesmoke;
 }
 
-body{
-    height: 100vh;
-}
-.Todo-Items{
-    background-color: rgb(196, 193, 193);
-    height: 50vh;
-    width: 300px;
-    margin: 0 auto;
+h1:nth-child(odd){
+    background-color: whitesmoke;
 }
