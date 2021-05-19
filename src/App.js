@@ -1,66 +1,41 @@
 /*
-Let's practice props and mapping components on our todo list app!
+Challenge:
 
-I've created a js file with some todos data in it, which I'm imported into this file. (Normally this data would come
-     from an API call, not a local file). 
-
-Challenge: Using the array map method, render a child component for each todo item in the todosData array and pass
- the relevant data to it.
+Given a stateless functional component:
+1. Follow the steps necessary to add state to it,
+2. Have state keep track of whether the user is logged in or not
+3. Add a button that logs the user in/out
+    a. extra challenge - make the button display "log in" if they're not logged in and "log out" if they are
+4. Display text that says "Logged in" if the user is logged in, or "Logged out" if they're not.
 */
 
-/*
-In the previous iteration of this todo list app, we pulled in todos data from a JSON file and mapped over it to display the todo items.
-
-Eventually we'll want to be able to modify the data, which will only happen if we've "loaded" the data in to the 
-component's state
-
-Challenge: Change the <App /> component into a stateful class component and load the imported `todosData` into state.
-*/
-
-import React from "react"
-import TodoItem from "./TodoItem"
-import todosData from "./toDosData"
+import React, {Component} from "react"
 import "./App.css"
-class App extends React.Component {
+
+class App extends Component{
     constructor(){
         super()
         this.state = {
-            todosData: todosData
+            isLoggedIn : false
         }
         this.handleChange = this.handleChange.bind(this)
     }
-    handleChange(id){
-        // console.log(id)
-        this.setState(prevState =>{
-            const updatedTodo = prevState.todosData.map(todo =>{
-                if(todo.id === id){
-                    return{
-                        ...todo,
-                        completed: !todo.completed
-                    }
-                }
-                return todo
-            })
+    handleChange(){
+        this.setState(prevState => {
             return{
-                todosData: updatedTodo
+                isLoggedIn: !prevState.isLoggedIn
             }
         })
     }
     render(){
-        const toDosComponent = this.state.todosData.map(todoitem => 
-            <TodoItem 
-                    key= {todoitem.id}
-                    id= {todoitem.id}
-                    text= {todoitem.text}
-                    completed = {todoitem.completed}
-                    handleChange = {this.handleChange}
-            />)
         return (
-            <div className="todo-list">
-                {toDosComponent}
+            <div className="login_box">
+                <p>You are Logged {this.state.isLoggedIn?"In":"Out"}</p>
+                <button onClick={this.handleChange} className="btn">Log {this.state.isLoggedIn?"Out":"In"}</button>
             </div>
         )
     }
+    
 }
 
 export default App
