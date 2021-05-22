@@ -1,6 +1,6 @@
 import React from "react"
 
-function InfoCallout(props) {
+function Callout(props) {
     return (
         <div className="callout">
             {props.children}
@@ -8,4 +8,4 @@ function InfoCallout(props) {
     )
 }
 
-export default InfoCallout
+export default Callout
