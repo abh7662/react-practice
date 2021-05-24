@@ -2,9 +2,9 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 import "./styles.css"
-import ThemeContext from "./UserContext"
+import ThemeContext from "./ThemeContext"
 
 ReactDOM.render(
-    <ThemeContext.Provider value={"ak7662"}>
+    <ThemeContext.Provider value="dark">
         <App />
     </ThemeContext.Provider>, document.getElementById("root"))
