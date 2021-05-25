@@ -1,22 +1,29 @@
 import React from "react"
-import Header from "./components/Header"
-import Home from "./pages/Home"
-import ServicesList from "./pages/services/ServicesList"
-import ServiceDetail from "./pages/services/ServiceDetail"
+import {Link,Switch,Route} from "react-router-dom"
+import Home from "./Home"
+import About from "./About"
 
-import {Switch, Route} from "react-router-dom"
-
-function App() {    
-    return (
+function App(props){
+    return(
         <div>
-            <Header />
-            
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+
             <Switch>
+                {/* <Route exact path="/" render={() => <h1>Hello</h1>} />
+                <Route path="/about" render={() => <h1>Hello about</h1>} /> */}
+
+                {/* <Route exact path="/" render={() => <Home />} />
+                <Route path="/about" render={() => <About />} /> */}
+                
+                {/* <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} /> */}
+                
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route exact path="/services" >
-                    <ServicesList />
+                <Route path="/about">
+                    <About />
                 </Route>
             </Switch>
         </div>
