@@ -1,43 +1,25 @@
 body { 
   font-family: sans-serif;
 }
-body {
-  margin: 0;
-  padding: 0;
-}
+body { }
 
 .App {
-  padding: 5px;
-  width: 100vw;
-  height: 100vh;
-  font-family: sans-serif;
-  text-align: center;
-}
-.App.darkmode {
-  background: black;
-  color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #646f74;
 }
 
-button,
-input,
-select {
-  margin: 5px;
-  padding: 5px;
-  background: white;
-  border: 3px solid black;
-  color: black;
+.date-picker {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
 }
-.darkmode button,
-.darkmode input,
-.darkmode select {
-  background: black;
-  border: 3px solid white;
-  color: white;
-}
-.error {
-  color: red;
-}
-.sheet {
-  margin: 5px auto;
-  text-align: left;
+
+.date-picker select {
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 16px;
 }
