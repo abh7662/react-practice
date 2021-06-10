@@ -1,25 +1,39 @@
 body { 
   font-family: sans-serif;
-}
-body { }
-
-.App {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #646f74;
+  margin: 0;
+  padding: 0;
 }
 
-.date-picker {
-    display: flex;
-    align-items: center;
-    font-size: 30px;
+
+.btn{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-areas: 
+    "header header header header"
+    "... main section ..."
+    "footer footer footer footer"
+    ;
 }
 
-.date-picker select {
-    margin: 5px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 16px;
+header{
+    grid-area: header;
+    background-color: lightskyblue;
+    padding: 2em;
+}
+
+footer{
+    grid-area: footer;
+    background-color: lightskyblue;
+    padding: 2em;
+
+}
+
+main{
+    grid-area: main;
+    padding: 7em;
+}
+
+section{
+    grid-area: section;
+    padding: 7em;
 }
