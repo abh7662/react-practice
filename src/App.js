@@ -1,11 +1,15 @@
 import React from "react"
-import { withFavoriteNumber } from "./withFavouriteNo"
+import Menu from "./Menu"
+import Favorite from "./Favorite"
 
-function App(props) {
-    console.log(props)
+function App() {
     return (
-        <div>Hello world!</div>
+        <div>
+            <Menu />
+            <hr />
+            <Favorite />
+        </div>
     )
 }
 
-export default withFavoriteNumber(App)
+export default App
