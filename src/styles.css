@@ -4,36 +4,3 @@ body {
   padding: 0;
 }
 
-
-.btn{
-    display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    grid-template-areas: 
-    "header header header header"
-    "... main section ..."
-    "footer footer footer footer"
-    ;
-}
-
-header{
-    grid-area: header;
-    background-color: lightskyblue;
-    padding: 2em;
-}
-
-footer{
-    grid-area: footer;
-    background-color: lightskyblue;
-    padding: 2em;
-
-}
-
-main{
-    grid-area: main;
-    padding: 7em;
-}
-
-section{
-    grid-area: section;
-    padding: 7em;
-}
