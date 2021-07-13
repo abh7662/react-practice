@@ -6,7 +6,10 @@ import Toggler from "./Toggler"
 function App() {
     return (
         <div>
-            <Toggler defaultOnValue={true} render={
+            <Menu />
+            <hr />
+            <Favorite />
+            {/* <Toggler defaultOnValue={true} render={
                 (on, toggle) => {
                     return (
                         <Menu on={on} toggle={toggle} />
@@ -21,7 +24,7 @@ function App() {
                         <Favorite on={on} toggle={toggle} />
                     )
                 }
-            } />
+            } /> */}
 
         </div>
     )
