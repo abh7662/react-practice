@@ -16,4 +16,5 @@ function Favorite(props) {
     )
 }
 
-export default withToggler(Favorite, false)
+export default Favorite
+// export default withToggler(Favorite, false)

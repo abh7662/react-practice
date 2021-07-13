@@ -5,25 +5,22 @@ class Toggler extends React.Component {
         on: this.props.defaultOnValue
     }
     toggle = () => {
-        this.setState(prevState => {
-            return {
-                on: !prevState.on
-            }
-        })
+        this.setState(prevState => ({
+            on: !prevState.on
+        }))
     }
     render() {
-        const C = this.props.componet
+        const C = this.props.component
         return (
             <C on={this.state.on} toggle={this.toggle} {...this.props} />
         )
-
     }
 }
-function withToggler(componet, defaultOnValue) {
-    const C = componet
+
+function withToggler(component, defaultOnValue) {
     return (props) => {
         return (
-            <Toggler componet={componet} defaultOnValue={defaultOnValue} {...props} />
+            <Toggler component={component} defaultOnValue={defaultOnValue} {...props} />
         )
     }
 }

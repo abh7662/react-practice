@@ -16,4 +16,5 @@ function Menu(props) {
     )
 }
 
-export default withToggler(Menu, true)
+// export default withToggler(Menu, true)
+export default Menu
