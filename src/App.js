@@ -1,21 +1,25 @@
 import React from "react"
-import Redux from "redux"
+import { Redux } from "redux"
 function App() {
-    let array = [11, 13, 14, 15]
-    let b = 10
-
-    let array1 = []
-    if (array.includes(b)) {
-        for (let a of array) {
-            if (a !== b) {
-                array1.push(a)
-            }
-        }
-    } else {
-        array1 = [...array]
-        array1.push(b)
+    const initialState = {
+        count: 0
     }
-    console.log(array1)
+    const reducer = (state = initialState, action) => {
+        switch (action.type) {
+            case "INCREMENT":
+                return {
+                    count: state.count + 1
+                }
+        }
+    }
+
+    const store = Redux.createStore(reducer)
+
+    store.subscribe(() => {
+        console.log(store.getState())
+    })
+
+    store.dispatch({ type: "INCREMENT" })
     return (
         <div>
             hello
