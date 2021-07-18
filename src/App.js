@@ -10,6 +10,10 @@ function App() {
                 return {
                     count: state.count + 1
                 }
+			case "DECREMENT":
+                return {
+                    count: state.count - 1
+                }
         }
     }
 
