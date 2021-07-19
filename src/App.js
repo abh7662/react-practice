@@ -14,6 +14,10 @@ function App() {
                 return {
                     count: state.count - 1
                 }
+			case "DOUBLE":
+                return {
+                    count: state.count - 1
+                }
         }
     }
 
