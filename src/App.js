@@ -3,7 +3,7 @@ import React from "react"
 
 
 export default function App() {
-    console.log(BigInt(2) + BigInt(2));
+    console.log(Math.round(.1 + .2))
     return (
         <div>
             hello
