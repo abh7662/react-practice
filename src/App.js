@@ -3,22 +3,15 @@ import React from "react"
 
 
 export default function App() {
-    // filter the users with letter k in their name and return only name and emai of the user
-
-    const getUsers = () => {
-        const api = 'https://jsonplaceholder.typicode.com/users'
-        fetch(api, { method: "GET" })
-            .then(res => res.json())
-            .then(data => {
-                const filteredData = data.filter(singleData => singleData.name.toLowerCase().includes("k"))
-                // const result = filteredData.map(singleFilterData => ({ name: singleFilterData.name, email: singleFilterData.email }))
-                const result = filteredData.map(({ name, email }) => ({ name, email }))
-                console.log(result)
-            })
-
+    // isogram function
+    const isIsogram = (string) => {
+        const result = [...new Set(string.toLowerCase())]
+        // console.log(result.join(''))
+        return result.join('') === string.toLowerCase()
     }
 
-    getUsers()
+    console.log(isIsogram('ambidExtrously')) // true
+    console.log(isIsogram('patteRN')) // false
     return (
         <div>
             hello
