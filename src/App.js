@@ -3,19 +3,16 @@ import React from "react"
 
 
 export default function App() {
-    const removeDuplicateValues = (array) => {
-        return array.reduce((accumulator, value) => {
-            if (!accumulator.includes(value)) {
-                accumulator.push(value)
-            }
-            return accumulator
-        }, [])
+    const map = (array, callback) => {
+        // return array.reduce((acc, curr) => {
+        //     acc.push(callback(curr))
+        //     return acc
+        // }, [])
+        return array.reduce((acc, curr) => [...acc, callback(curr)], [])
     }
-    console.log(
-        removeDuplicateValues(["one", "two", "one", "three", "three", "two"])
-    ); // ['one','two','three']
 
 
+    console.log(map([1, 2, 3], (v) => v + 1)); // [2,3,4]
     return (
         <div>
             hello
