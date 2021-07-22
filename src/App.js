@@ -3,13 +3,17 @@ import React from "react"
 
 
 export default function App() {
-    function isPanagram(str) {
-        const processedString = str.toLowerCase().split(" ").join("").split("").sort()
-        const result = [...new Set(processedString)]
-        return result.length === 26
+    const abc = 'abcdefghijklmnopqrstuvwxyz'
+
+    const isPangram = (string) => {
+        // const processedString = [...new Set(string.toLowerCase().split(' ').join(''))].sort().join('')
+        const regexMatch = new Set(string.toLowerCase().match(/[a-z]/gi))
+        return regexMatch.size === 26
     }
 
-    console.log(isPanagram("The quick Brown fox jumps over the lazy DOG"))
+    console.log(isPangram('The quick Brown fox jumps over the lazy DOG'))
+    console.log(isPangram('abcdefghijklmnopqrstuvwxyz'))
+    console.log(isPangram('abcdefghpqrstuvwxyz'))
     return (
         <div>
             hello
