@@ -4,12 +4,12 @@ import React from "react"
 
 export default function App() {
     function isPanagram(str) {
-        const allAlphabets = 'abcdefghijklmnopqrstuvwxyz'.split('')
-        str = str.toLowerCase()
-        return allAlphabets.every(x => str.includes(x))
+        const processedString = str.toLowerCase().split(" ").join("").split("").sort()
+        const result = [...new Set(processedString)]
+        return result.length === 26
     }
 
-    console.log(isPanagram("abcdefghijklmnopqrstuvwxyz"))
+    console.log(isPanagram("The quick Brown fox jumps over the lazy DOG"))
     return (
         <div>
             hello
