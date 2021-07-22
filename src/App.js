@@ -3,16 +3,14 @@ import React from "react"
 
 
 export default function App() {
-    const map = (array, callback) => {
-        // return array.reduce((acc, curr) => {
-        //     acc.push(callback(curr))
-        //     return acc
-        // }, [])
-        return array.reduce((acc, curr) => [...acc, callback(curr)], [])
+    const makeFlat = (array) => {
+        return array.reduce((acc, curr) => {
+            return Array.isArray(curr) ? [...acc, ...makeFlat(curr)] : [...acc, curr]
+        }, [])
     }
 
 
-    console.log(map([1, 2, 3], (v) => v + 1)); // [2,3,4]
+    console.log(makeFlat(["one", ["two", "three"], ["four", ["five"]]])); // ['one','two','three','four','five']
     return (
         <div>
             hello
