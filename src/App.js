@@ -1,18 +1,19 @@
 
 import React from "react"
 
-
 export default function App() {
-    function sayHello() {
-        return "Hello " + this.name;
+    function count1() {
+        let i = 0
+        i = i + 1
+        return function () {
+            return i
+        }
     }
-
-    var obj = { name: "Sandy" };
-
-    console.log(sayHello.call(obj))
-
-    // Returns "Hello Sandy"
-
+    const count = count1()
+    count()
+    console.log(count());
+    console.log(count());
+    console.log(count());
     return (
         <div>
             hello
