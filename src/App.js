@@ -1,14 +1,13 @@
 
 import React from "react"
-import withExtraProps from "./withExtraProps"
-
+import RenderProps from "./renderProps"
 function App() {
 
     return (
         <div>
-            <h1>My name is {props.name}</h1>
+            <RenderProps render={(val) => { `value is ${val}` }} />
         </div>
     )
 }
 
-export default withExtraProps(App)
+export default App
