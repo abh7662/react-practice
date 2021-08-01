@@ -5,7 +5,11 @@ function App() {
 
     return (
         <div>
-            <RenderProps render={(val) => { `value is ${val}` }} />
+            <RenderProps render={(val) =>
+                <>
+                    {`value is ${val}`}
+                </>
+            } />
         </div>
     )
 }
