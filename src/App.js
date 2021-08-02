@@ -55,48 +55,181 @@ import React, { useEffect, useState } from "react"
 
 // }
 
-// ------------------------rendring flow in function based components with clild--------------------
+// -------------------------------------------------------------
 
 export default function App() {
     return (
         <>
-            <ParentComponent></ParentComponent>
+            <App1></App1>
         </>
     )
 }
 
-function ParentComponent(props) {
-    console.log("ParentComponent1")
-    useEffect(() => {
-        console.log("use effect in parent coponent")
+// ------------------------rendring counter value--------------------
 
+// function App1() {
+//     const [counter, setCounter] = useState(0)
+//     useEffect(() => {
+//         setCounter(prevCounter => {
+//             console.log(prevCounter)
+//             return prevCounter + 1
+//         })
+//         setCounter(prevCounter => {
+//             console.log(prevCounter)
+//             return prevCounter + 1
+//         })
+//         setCounter(prevCounter => {
+//             console.log(prevCounter)
+//             return prevCounter + 1
+//         })
+//         setCounter(prevCounter => {
+//             console.log(prevCounter)
+//             return prevCounter + 1
+//         })
+
+//     }, [])
+//     return (
+//         <>
+//             <h1>{counter}</h1>
+//         </>
+//     )
+// }
+
+
+function App1() {
+    const [counter, setCounter] = useState(0)
+    useEffect(() => {
+        setCounter(prevCounter => {
+            console.log(prevCounter)
+            return prevCounter + 1
+        })
     }, [])
+    useEffect(() => {
+        if (counter < 1000) {
+            setTimeout(() => {
+                setCounter(prevCounter => {
+                    console.log(prevCounter)
+                    return prevCounter + 1
+                })
+            }, 5000)
+        }
+    }, [counter])
     return (
         <>
-            <h1>parent</h1>
-
-            {console.log("ParentComponent2")}
-            <ChildComponent />
+            <h1>{counter}</h1>
         </>
     )
 }
+// ------------------------rendring flow in function based components with clild--------------------
 
-function ChildComponent(props) {
-    console.log("ChildComponent1")
-    useEffect(() => {
-        console.log("use effect in child coponent")
+// function ParentComponent(props) {
+//     console.log("ParentComponent1")
+//     useEffect(() => {
+//         console.log("use effect in parent coponent")
 
-    }, [])
-    return (
-        <>
-            {console.log("ChildComponent2")}
-            <h1>child</h1>
-        </>
-    )
-}
+//     }, [])
+//     return (
+//         <>
+//             <h1>parent</h1>
+
+//             {console.log("ParentComponent2")}
+//             <ChildComponent />
+//         </>
+//     )
+// }
+
+// function ChildComponent(props) {
+//     console.log("ChildComponent1")
+//     useEffect(() => {
+//         console.log("use effect in child coponent")
+
+//     }, [])
+//     return (
+//         <>
+//             {console.log("ChildComponent2")}
+//             <h1>child</h1>
+//         </>
+//     )
+// }
+// ----------------------use of should compenet app and react.memo---------------------------------------
+
+// function ParentComponent() {
+
+//     const [counter, setCounter] = useState(0)
+//     useEffect(() => {
+//         console.log('I am parent');
+//     }, []);
+//     const handleChange = () => {
+//         setCounter(counter + 1)
+//     }
+//     return (
+//         <>
+//             <h1>{counter}</h1>
+//             <button onClick={handleChange}>increment</button>
+//             <ChildComponent counter={counter}></ChildComponent>
+//         </>
+
+//     )
+// }
+
+// function ChildComponent(props) {
+
+//     useEffect(() => {
+//         console.log('I am child');
+//     }, []);
+//     return (<div>{props.counter}</div>)
+// }
+// React.memo(ChildComponent, (a, b) => {
+//     return false
+// })
+
+// const areEqual = (prevProps, nextProps) => {
+//     if (nextProps.counter % 2 == 0)
+//         return false
+//     return true
+// }
+
+// const ChildComponent = React.memo(ChildComponent1, areEqual)
+// const ChildComponent = React.memo(props => {
+//     useEffect(() => {
+//         console.log('I am child');
+//     }, []);
+//     return (<div>{props.counter}</div>)
+// }, areEqual)
+
+// function ChildComponent1(props) {
+
+//     useEffect(() => {
+//         console.log('I am child');
+//     }, []);
+//     return (<div>{props.counter}</div>)
+// }
+// React.memo(ChildComponent, (a, b) => {
+//     return false
+// })
 
 
+// class ChildComponent extends React.Component {
+//     constructor() {
+//         super()
 
+//     }
+//     shouldComponentUpdate(props, state) {
+//         if (props.counter % 2 === 0) {
+//             return true
+//         }
+//         return false
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 {this.props.counter}
+//             </div>
+//         )
+//     }
+// }
+
+// -------------------------------------------------------------
 
 // class App1 extends React.Component {
 //     constructor() {
