@@ -1,0 +1,32 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+}
+
+button, a {
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    background-color: #333333;
+    color: whitesmoke;
+    display: block;
+    text-align: center;
+    width: 30%;
+}
+
+.dark-theme {
+    background-color: #333333;
+    color: whitesmoke;
+}
+
+.light-theme {
+    background-color: whitesmoke;
+    color: #333333;
+}
+
+
